@@ -3,12 +3,15 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "TEST_BROWSER_DRIVER=puppeteer meteor test --once --full-app --driver-package meteortesting:mocha"
+    "test": "TEST_BROWSER_DRIVER=puppeteer meteor test --once --full-app --driver-package meteortesting:mocha",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "meteor-node-stubs": "^0.4.1",
-    "puppeteer": "^1.6.2"
+    "puppeteer": "^1.6.2",
+    "snyk": "^1.230.5"
   },
   "meteor": {
     "mainModule": {
@@ -16,5 +19,6 @@
       "server": "server/main.js"
     },
     "testModule": "tests/main.js"
-  }
+  },
+  "snyk": true
 }
